@@ -13,6 +13,7 @@ cmake -G "NMake Makefiles" ^
       -D TIFF_NAMES=libtiff_i ^
       -D PROJ4_NAMES=proj_i ^
       -D JPEG_NAMES=libjpeg ^
+	  -D GEOTIFF_CSV_DATA_DIR=%LIBRARY_PREFIX%\Library\share\epsg_csv
       %SRC_DIR%
 if errorlevel 1 exit 1
 
