@@ -1,4 +1,4 @@
-{% set version = "1.4.2" %}
+{% set version = "1.4.3" %}
 
 package:
   name: geotiff
@@ -6,10 +6,10 @@ package:
 
 source:
   url: http://download.osgeo.org/geotiff/libgeotiff/libgeotiff-{{ version }}.tar.gz
-  sha256: ad87048adb91167b07f34974a8e53e4ec356494c29f1748de95252e8f81a5e6e
+  sha256: b8510d9b968b5ee899282cdd5bef13fd02d5a4c19f664553f81e31127bc47265
 
 build:
-  number: 1007
+  number: 1000
 
 requirements:
   build:
