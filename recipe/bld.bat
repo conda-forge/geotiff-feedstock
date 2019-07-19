@@ -6,12 +6,13 @@ cmake -G "NMake Makefiles" ^
       -D CMAKE_BUILD_TYPE=Release ^
       -D CMAKE_PREFIX_PATH=%LIBRARY_PREFIX% ^
       -D CMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
+      -D WITH_PROJ4=ON ^
       -D WITH_ZLIB=ON ^
       -D BUILD_SHARED_LIBS=ON ^
       -D WITH_JPEG=ON ^
       -D WITH_TIFF=ON ^
       -D TIFF_NAMES=tiff ^
-      -D PROJ_NAMES=proj_6_1 ^
+      -D PROJ4_NAMES=proj_i ^
       -D JPEG_NAMES=libjpeg ^
       %SRC_DIR%
 if errorlevel 1 exit 1

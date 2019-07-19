@@ -17,17 +17,12 @@ pin_run_as_build:
     max_pin: x
   proj4:
     max_pin: x.x.x
-  vc:
-    max_pin: x
   zlib:
     max_pin: x.x
 proj4:
 - 6.1.0
-vc:
-- '14'
 zip_keys:
-- - vc
-  - c_compiler
+- - c_compiler
   - cxx_compiler
 zlib:
 - '1.2'
