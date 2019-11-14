@@ -11,7 +11,7 @@ source:
     - cmake.patch
 
 build:
-  number: 5
+  number: 6
   skip: True  # [win and vc<14]
   run_exports:
     # https://abi-laboratory.pro/?view=timeline&l=libgeotiff
@@ -53,3 +53,4 @@ extra:
   recipe-maintainers:
     - gillins
     - ocefpaf
+    - xylar
