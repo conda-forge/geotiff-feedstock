@@ -160,4 +160,5 @@ Feedstock Maintainers
 
 * [@gillins](https://github.com/gillins/)
 * [@ocefpaf](https://github.com/ocefpaf/)
+* [@xylar](https://github.com/xylar/)
 
