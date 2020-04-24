@@ -1,4 +1,4 @@
-{% set version = "1.5.1" %}
+{% set version = "1.6.0" %}
 
 package:
   name: geotiff
@@ -6,13 +6,13 @@ package:
 
 source:
   url: http://download.osgeo.org/geotiff/libgeotiff/libgeotiff-{{ version }}.tar.gz
-  sha256: f9e99733c170d11052f562bcd2c7cb4de53ed405f7acdde4f16195cd3ead612c
+  sha256: 9311017e5284cffb86f2c7b7a9df1fb5ebcdc61c30468fb2e6bca36e4272ebca
   patches:
     - cmake.patch
 
 build:
-  number: 10
-  skip: True  # [win and vc<14]
+  number: 0
+  skip: true  # [win and vc<14]
   run_exports:
     # https://abi-laboratory.pro/?view=timeline&l=libgeotiff
     - {{ pin_subpackage('geotiff', max_pin='x.x') }}
@@ -43,7 +43,7 @@ about:
   home: https://trac.osgeo.org/geotiff
   license: MIT
   license_file: LICENSE
-  summary: 'TIFF based interchange format for georeferenced raster imagery'
+  summary: TIFF based interchange format for georeferenced raster imagery
   description: |
     GeoTIFF represents an effort by over 160 different remote sensing,
     GIS, cartographic, and surveying related companies and organizations
