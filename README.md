@@ -5,7 +5,7 @@ Home: https://trac.osgeo.org/geotiff
 
 Package license: MIT
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: TIFF based interchange format for georeferenced raster imagery
 
