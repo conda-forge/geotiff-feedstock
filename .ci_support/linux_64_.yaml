@@ -24,6 +24,8 @@ pin_run_as_build:
   zlib:
     max_pin: x.x
 proj:
-- 7.1.0
+- 7.1.1
+target_platform:
+- linux-64
 zlib:
 - '1.2'
