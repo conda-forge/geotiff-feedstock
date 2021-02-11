@@ -1,6 +1,8 @@
 #!/bin/bash
+# Get an updated config.sub and config.guess
+cp $BUILD_PREFIX/share/gnuconfig/config.* .
 
-cmake -D CMAKE_PREFIX_PATH=$PREFIX \
+cmake ${CMAKE_ARGS} -D CMAKE_PREFIX_PATH=$PREFIX \
       -D CMAKE_INSTALL_PREFIX=$PREFIX \
       -D WITH_PROJ4=ON \
       -D WITH_ZLIB=ON \
