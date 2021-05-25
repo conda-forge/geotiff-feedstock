@@ -21,8 +21,8 @@ build:
 
 requirements:
   build:
-    - patch
-    - make
+    - patch  # [not win]
+    - make  # [unix]
     - cmake
     - gnuconfig  # [unix]
     - {{ compiler('c') }}
