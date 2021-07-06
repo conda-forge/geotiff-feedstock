@@ -55,6 +55,7 @@ about:
     GIS, cartographic, and surveying related companies and organizations
     to establish a TIFF based interchange format for georeferenced raster imagery.
   dev_url: https://github.com/OSGeo/libgeotiff
+  doc_url: https://www.ogc.org/standards/geotiff
 
 extra:
   recipe-maintainers:
