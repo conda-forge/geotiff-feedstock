@@ -18,6 +18,7 @@ build:
     - {{ pin_subpackage('geotiff', max_pin='x.x') }}
   ignore_run_exports:
     - zlib
+    - jpeg
 
 requirements:
   build:
