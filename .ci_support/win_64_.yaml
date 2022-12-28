@@ -11,7 +11,7 @@ jpeg:
 libtiff:
 - '4.5'
 proj:
-- 9.1.0
+- 9.1.1
 target_platform:
 - win-64
 vc:
