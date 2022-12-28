@@ -9,14 +9,7 @@ cxx_compiler:
 jpeg:
 - '9'
 libtiff:
-- '4'
-pin_run_as_build:
-  jpeg:
-    max_pin: x
-  libtiff:
-    max_pin: x
-  zlib:
-    max_pin: x.x
+- '4.5'
 proj:
 - 9.1.0
 target_platform:
