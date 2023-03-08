@@ -11,7 +11,7 @@ source:
     - cmake.patch
 
 build:
-  number: 6
+  number: 7
   skip: true  # [win and vc<14]
   run_exports:
     # https://abi-laboratory.pro/?view=timeline&l=libgeotiff
@@ -27,12 +27,12 @@ requirements:
   host:
     - proj
     - zlib
-    - jpeg
+    - libjpeg-turbo
     - libtiff
   run:
     - proj
     - zlib
-    - jpeg
+    - libjpeg-turbo
     - libtiff
 
 test:
