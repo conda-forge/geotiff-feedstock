@@ -11,7 +11,7 @@ libjpeg_turbo:
 libtiff:
 - '4.5'
 proj:
-- 9.1.1
+- 9.2.0
 target_platform:
 - win-64
 vc:
