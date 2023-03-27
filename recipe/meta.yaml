@@ -19,7 +19,8 @@ build:
 
 requirements:
   build:
-    - patch  # [not win]
+    - patch     # [not win]
+    - m2-patch  # [win]
     - make  # [unix]
     - cmake
     - gnuconfig  # [unix]
