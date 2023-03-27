@@ -5,7 +5,7 @@ package:
   version: {{ version }}
 
 source:
-  url: http://download.osgeo.org/geotiff/libgeotiff/libgeotiff-{{ version }}.tar.gz
+  url: https://download.osgeo.org/geotiff/libgeotiff/libgeotiff-{{ version }}.tar.gz
   sha256: fc304d8839ca5947cfbeb63adb9d1aa47acef38fc6d6689e622926e672a99a7e
   patches:
     - cmake.patch
