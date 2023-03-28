@@ -5,34 +5,35 @@ package:
   version: {{ version }}
 
 source:
-  url: http://download.osgeo.org/geotiff/libgeotiff/libgeotiff-{{ version }}.tar.gz
+  url: https://download.osgeo.org/geotiff/libgeotiff/libgeotiff-{{ version }}.tar.gz
   sha256: fc304d8839ca5947cfbeb63adb9d1aa47acef38fc6d6689e622926e672a99a7e
   patches:
     - cmake.patch
 
 build:
-  number: 0
+  number: 1
   skip: True  # [win and vc<14]
   run_exports:
     # https://abi-laboratory.pro/?view=timeline&l=libgeotiff
     - {{ pin_subpackage('geotiff', max_pin='x.x') }}
-  ignore_run_exports:
-    - zlib
-    - jpeg
 
 requirements:
   build:
-    - patch  # [not win]
+    - patch     # [not win]
+    - m2-patch  # [win]
     - make  # [unix]
     - cmake
     - gnuconfig  # [unix]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
-    - proj
-    - zlib
-    - jpeg
-    - libtiff
+    - proj 6.2.1  # [not ((osx and arm64) or (linux and s390x))]
+    - proj 7.2.0  # [osx and arm64]
+    - proj 8.2.1  # [linux and s390x]
+    - zlib 1.2.*
+    - jpeg 9e
+    - libtiff 4.1  # [not ((osx and arm64) or (linux and aarch64))]
+    - libtiff 4.2  # [(osx and arm64) or (linux and aarch64)]
   run:
     - proj
     - zlib
