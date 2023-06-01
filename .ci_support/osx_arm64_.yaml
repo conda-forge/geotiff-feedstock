@@ -3,7 +3,7 @@ MACOSX_DEPLOYMENT_TARGET:
 c_compiler:
 - clang
 c_compiler_version:
-- '14'
+- '15'
 channel_sources:
 - conda-forge
 channel_targets:
@@ -11,7 +11,7 @@ channel_targets:
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
-- '14'
+- '15'
 libjpeg_turbo:
 - 2.1.5
 libtiff:
@@ -19,7 +19,7 @@ libtiff:
 macos_machine:
 - arm64-apple-darwin20.0.0
 proj:
-- 9.2.0
+- 9.2.1
 target_platform:
 - osx-arm64
 zip_keys:
