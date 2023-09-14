@@ -21,7 +21,7 @@ docker_image:
 libjpeg_turbo:
 - 2.1.5
 libtiff:
-- '4.5'
+- '4.6'
 proj:
 - 9.3.0
 target_platform:
