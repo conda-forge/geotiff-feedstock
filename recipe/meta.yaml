@@ -19,7 +19,9 @@ build:
 
 requirements:
   build:
-    - cmake
+    # cmake 3.28 had windows build failure GH63
+    - cmake <3.28  # [win]
+    - cmake  # [not win]
     - make
     - gnuconfig  # [unix]
     - {{ compiler('c') }}
