@@ -19,7 +19,7 @@ libjpeg_turbo:
 libtiff:
 - '4.6'
 proj:
-- 9.3.0
+- 9.3.1
 target_platform:
 - linux-64
 zip_keys:
