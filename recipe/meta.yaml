@@ -11,8 +11,8 @@ source:
     - cmake.patch
 
 build:
-  number: 16
-  skip: true  # [win and vc<14]
+  number: 17
+  skip: true  # [(win and vc<14) or ppc64le]
   run_exports:
     # https://abi-laboratory.pro/?view=timeline&l=libgeotiff
     - {{ pin_subpackage('geotiff', max_pin='x.x') }}
@@ -26,6 +26,7 @@ requirements:
     - gnuconfig  # [unix]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - {{ stdlib("c") }}
   host:
     - proj
     - zlib
