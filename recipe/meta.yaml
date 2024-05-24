@@ -1,4 +1,4 @@
-{% set version = "1.7.1" %}
+{% set version = "1.7.3" %}
 
 package:
   name: geotiff
@@ -6,12 +6,10 @@ package:
 
 source:
   url: http://download.osgeo.org/geotiff/libgeotiff/libgeotiff-{{ version }}.tar.gz
-  sha256: 05ab1347aaa471fc97347d8d4269ff0c00f30fa666d956baba37948ec87e55d6
-  patches:
-    - cmake.patch
+  sha256: ba23a3a35980ed3de916e125c739251f8e3266be07540200125a307d7cf5a704
 
 build:
-  number: 17
+  number: 0
   skip: true  # [(win and vc<14) or ppc64le]
   run_exports:
     # https://abi-laboratory.pro/?view=timeline&l=libgeotiff
