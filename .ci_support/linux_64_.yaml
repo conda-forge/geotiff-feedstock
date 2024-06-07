@@ -23,7 +23,7 @@ libjpeg_turbo:
 libtiff:
 - '4.6'
 proj:
-- 9.4.0
+- '9.4'
 target_platform:
 - linux-64
 zip_keys:
@@ -32,4 +32,4 @@ zip_keys:
 - - c_stdlib_version
   - cdt_name
 zlib:
-- '1.2'
+- '1'
