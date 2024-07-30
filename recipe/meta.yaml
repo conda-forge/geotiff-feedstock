@@ -9,8 +9,7 @@ source:
   sha256: ba23a3a35980ed3de916e125c739251f8e3266be07540200125a307d7cf5a704
 
 build:
-  number: 1
-  skip: true  # [(win and vc<14) or ppc64le]
+  number: 2
   run_exports:
     # https://abi-laboratory.pro/?view=timeline&l=libgeotiff
     - {{ pin_subpackage('geotiff', max_pin='x.x') }}

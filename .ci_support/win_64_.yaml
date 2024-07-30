@@ -16,7 +16,5 @@ proj:
 - '9.4'
 target_platform:
 - win-64
-vc:
-- '14'
 zlib:
 - '1'
