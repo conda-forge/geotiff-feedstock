@@ -13,7 +13,7 @@ libjpeg_turbo:
 libtiff:
 - '4.6'
 proj:
-- '9.4'
+- '9.5'
 target_platform:
 - win-64
 zlib:
