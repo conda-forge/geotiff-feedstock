@@ -11,7 +11,6 @@ cmake -G "NMake Makefiles" ^
       -D WITH_JPEG=ON ^
       -D WITH_TIFF=ON ^
       -D TIFF_NAMES=tiff ^
-      -D PROJ_NAMES=proj_6_1 ^
       -D JPEG_NAMES=libjpeg ^
       %SRC_DIR%
 if errorlevel 1 exit 1
