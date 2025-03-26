@@ -1,8 +1,10 @@
 #!/bin/bash
 
+export SDKROOT=$(xcrun --sdk macosx --show-sdk-path)
+export LIBRARY_PATH="$LIBRARY_PATH:$SDKROOT/usr/lib"
+
 cmake -D CMAKE_PREFIX_PATH=$PREFIX \
       -D CMAKE_INSTALL_PREFIX=$PREFIX \
-      -D WITH_PROJ4=ON \
       -D WITH_ZLIB=ON \
       -D BUILD_SHARED_LIBS=ON \
       -D WITH_JPEG=ON \
