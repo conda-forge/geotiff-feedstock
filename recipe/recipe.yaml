@@ -12,15 +12,14 @@ source:
   sha256: c598d04fdf2ba25c4352844dafa81dde3f7fd968daa7ad131228cd91e9d3dc47
 
 build:
-  number: 4
+  number: 5
 
 requirements:
   build:
     # cmake 3.28 had windows build failure GH63
     - if: win
       then: cmake <3.28
-    - if: not win
-      then: cmake
+      else: cmake
     - make
     - if: unix
       then: gnuconfig
@@ -44,11 +43,9 @@ tests:
   - script:
       - if: not win
         then: test -f $PREFIX/lib/libgeotiff${SHLIB_EXT}
-      - if: win
-        then: if not exist %LIBRARY_LIB%\\geotiff_i.lib exit 1
-      - if: win
-        then: if not exist %LIBRARY_BIN%\\geotiff.dll exit 1
-
+        else:
+          - if not exist %LIBRARY_LIB%\\geotiff_i.lib exit 1
+          - if not exist %LIBRARY_BIN%\\geotiff.dll exit 1
 about:
   license: MIT
   license_file: LICENSE
