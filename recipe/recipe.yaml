@@ -12,15 +12,13 @@ source:
   sha256: c598d04fdf2ba25c4352844dafa81dde3f7fd968daa7ad131228cd91e9d3dc47
 
 build:
-  number: 5
+  number: 6
 
 requirements:
   build:
-    # cmake 3.28 had windows build failure GH63
-    - if: win
-      then: cmake <3.28
-      else: cmake
-    - make
+    - cmake
+    - if: unix
+      then: make
     - if: unix
       then: gnuconfig
     - ${{ compiler('c') }}
@@ -40,12 +38,40 @@ requirements:
     - ${{ pin_subpackage('geotiff', upper_bound='x.x') }}
 
 tests:
-  - script:
+  - files:
+      recipe:
+        - CMakeLists.txt
+        - test_geotiff.c
+    requirements:
+      run:
+        - if: target_platform == "win-arm64"
+          then:
+            - cmake
+            - ${{ compiler('c') }}
+    script:
+      - listgeo -st_test
       - if: not win
         then: test -f $PREFIX/lib/libgeotiff${SHLIB_EXT}
         else:
+          - if not exist %LIBRARY_INC%\\geotiff.h exit 1
           - if not exist %LIBRARY_LIB%\\geotiff_i.lib exit 1
           - if not exist %LIBRARY_BIN%\\geotiff.dll exit 1
+          - if not exist %LIBRARY_BIN%\\listgeo.exe exit 1
+      - if: target_platform == "win-arm64"
+        then:
+          - cmake -S . -B test-build -G "NMake Makefiles" -DCMAKE_PREFIX_PATH="%LIBRARY_PREFIX%"
+          - if errorlevel 1 exit 1
+          - cmake --build test-build
+          - if errorlevel 1 exit 1
+          - set "PATH=%LIBRARY_BIN%;%PATH%"
+          - test-build\\geotiff_consumer.exe
+          - if errorlevel 1 exit 1
+          - dumpbin /headers test-build\\geotiff_consumer.exe | findstr /I /C:"AA64 machine (ARM64)"
+          - if errorlevel 1 exit 1
+          - dumpbin /headers "%LIBRARY_BIN%\\listgeo.exe" | findstr /I /C:"AA64 machine (ARM64)"
+          - if errorlevel 1 exit 1
+          - dumpbin /headers "%LIBRARY_BIN%\\geotiff.dll" | findstr /I /C:"AA64 machine (ARM64)"
+          - if errorlevel 1 exit 1
 about:
   license: MIT
   license_file: LICENSE
