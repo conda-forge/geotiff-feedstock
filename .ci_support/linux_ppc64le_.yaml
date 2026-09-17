@@ -21,7 +21,7 @@ libjpeg_turbo:
 libtiff:
 - '4.7'
 proj:
-- '9.8'
+- '9.9'
 target_platform:
 - linux-ppc64le
 zip_keys:
