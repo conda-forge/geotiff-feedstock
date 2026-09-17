@@ -15,13 +15,13 @@ cxx_compiler:
 cxx_compiler_version:
 - '15'
 docker_image:
-- quay.io/condaforge/linux-anvil-x86_64:alma10
+- quay.io/condaforge/linux-anvil-aarch64:alma10
 libjpeg_turbo:
 - '3'
 libtiff:
 - '4.7'
 proj:
-- '9.8'
+- '9.9'
 target_platform:
 - linux-aarch64
 zip_keys:

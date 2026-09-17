@@ -25,7 +25,7 @@ libtiff:
 macos_machine:
 - arm64-apple-darwin20.0.0
 proj:
-- '9.8'
+- '9.9'
 target_platform:
 - osx-arm64
 zip_keys:
